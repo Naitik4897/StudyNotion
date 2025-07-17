@@ -1,0 +1,129 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Swiper Styles */
+.course-slider .swiper-slide {
+  height: auto !important;
+}
+
+.course-slider .swiper-button-next,
+.course-slider .swiper-button-prev {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+}
+
+.course-slider .swiper-button-next:hover,
+.course-slider .swiper-button-prev:hover {
+  background: rgba(255, 214, 10, 0.2) !important;
+}
+
+.course-slider .swiper-pagination-bullet {
+  background: #64748b !important;
+  opacity: 0.5 !important;
+}
+
+.course-slider .swiper-pagination-bullet-active {
+  background: #FFD60A !important;
+  opacity: 1 !important;
+}
+
+.review-slider .swiper-slide {
+  height: auto !important;
+  display: flex !important;
+}
+
+.review-slider .swiper-slide > div {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Ensure proper spacing and prevent overlapping */
+.swiper-container {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+/* Fix for cards in review slider */
+.review-slider .swiper-slide {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-slider .swiper-slide > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Course card improvements */
+.course-slider .swiper-slide {
+  padding-bottom: 20px;
+}
+
+/* Line clamp utility */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Course card hover effects */
+.course-slider .swiper-slide:hover {
+  transform: translateY(-2px);
+}
+
+/* Review Slider Styles */
+.reviews-swiper .swiper-button-next,
+.reviews-swiper .swiper-button-prev {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 50% !important;
+  width: 40px !important;
+  height: 40px !important;
+  -webkit-backdrop-filter: blur(10px) !important;
+  backdrop-filter: blur(10px) !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid rgba(255, 214, 10, 0.3) !important;
+}
+
+.reviews-swiper .swiper-button-next:hover,
+.reviews-swiper .swiper-button-prev:hover {
+  background: rgba(255, 214, 10, 0.2) !important;
+  border-color: rgba(255, 214, 10, 0.6) !important;
+}
+
+.reviews-swiper .swiper-pagination-bullet {
+  background: #64748b !important;
+  opacity: 0.5 !important;
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.reviews-swiper .swiper-pagination-bullet-active {
+  background: #FFD60A !important;
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+}
+
+/* Ensure cards have equal height */
+.reviews-swiper .swiper-slide {
+  height: auto !important;
+  display: flex !important;
+}
+
+.reviews-swiper .swiper-slide > div {
+  width: 100% !important;
+  height: 100% !important;
+}
