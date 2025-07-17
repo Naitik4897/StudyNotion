@@ -31,8 +31,8 @@ import Instructor from "./components/core/Dashboard/InstructorDashboard/Instruct
 
 function App() {
 
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
+  // const dispatch = useDispatch();
+  // const navigate = useNavigate();
   
   const { user } = useSelector((state) => state.profile)
 
