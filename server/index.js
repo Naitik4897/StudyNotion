@@ -30,18 +30,16 @@ const corsOptions = {
     const allowedOrigins = [
       'http://localhost:3000',
       'https://localhost:3000',
+      'https://studynotion-ashen.vercel.app', // Replace with your actual URL
       process.env.FRONTEND_URL,
-      // Will be updated after deployment
     ];
     
-    // Allow requests with no origin (mobile apps, Postman, etc.)
     if (!origin) return callback(null, true);
     
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      // For development, allow all origins
-      callback(null, true);
+      callback(null, true); // Allow all for now
     }
   },
   credentials: true,
