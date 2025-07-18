@@ -1,93 +1,61 @@
-// filepath: c:\Users\nrmai\Downloads\Study-Notion Project\Study-Notion-Project\server\index.js
 const express = require("express");
 const app = express();
+
 const userRoutes = require("./routes/User");
 const profileRoutes = require("./routes/Profile");
 const paymentRoutes = require("./routes/Payments");
 const courseRoutes = require("./routes/Course");
 const contactUsRoute = require("./routes/Contact");
+const testRoutes = require("./routes/Test");
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const { cloudinaryConnect } = require("./config/cloudinary");
+const {cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
 
 dotenv.config();
-
 const PORT = process.env.PORT || 4000;
 
-// Database connection
+//database connect
 database.connect();
-
-// Middlewares
+//middlewares
 app.use(express.json());
 app.use(cookieParser());
-
-// CORS configuration for production
-const corsOptions = {
-  origin: function (origin, callback) {
-    const allowedOrigins = [
-      'http://localhost:3000',
-      'https://localhost:3000',
-      'https://studynotion-ashen.vercel.app', // Replace with your actual URL
-      process.env.FRONTEND_URL,
-    ];
-    
-    if (!origin) return callback(null, true);
-    
-    if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(null, true); // Allow all for now
-    }
-  },
-  credentials: true,
-  optionsSuccessStatus: 200
-};
-
-app.use(cors(corsOptions));
+app.use(
+  cors({
+    origin:"http://localhost:3000",
+    credentials:true,
+  })
+)
 
 app.use(
   fileUpload({
-    useTempFiles: true,
-    tempFileDir: "/tmp",
+    useTempFiles:true,
+    tempFileDir:"/tmp",
   })
-);
-
-// Cloudinary connection
+)
+//cloudinary connection
 cloudinaryConnect();
 
-// Routes
+//routes
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/profile", profileRoutes);
 app.use("/api/v1/course", courseRoutes);
 app.use("/api/v1/payment", paymentRoutes);
 app.use("/api/v1/reach", contactUsRoute);
+app.use("/api/v1/test", testRoutes);
 
-// Default route
+//def route
+
 app.get("/", (req, res) => {
   return res.json({
-    success: true,
-    message: "StudyNotion server is up and running....",
+    success:true,
+    message:'Your server is up and running....'
   });
 });
 
-// Health check route
-app.get("/health", (req, res) => {
-  return res.json({
-    success: true,
-    message: "Server is healthy",
-    timestamp: new Date().toISOString()
-  });
-});
+app.listen(PORT, () => {
+  console.log(`App is running at ${PORT}`)
+})
 
-// Start server only in development
-if (process.env.NODE_ENV !== 'production') {
-  app.listen(PORT, () => {
-    console.log(`App is running at ${PORT}`);
-  });
-}
-
-// Export for Vercel
-module.exports = app;
