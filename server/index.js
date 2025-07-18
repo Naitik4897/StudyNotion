@@ -6,7 +6,6 @@ const profileRoutes = require("./routes/Profile");
 const paymentRoutes = require("./routes/Payments");
 const courseRoutes = require("./routes/Course");
 const contactUsRoute = require("./routes/Contact");
-const testRoutes = require("./routes/Test");
 const database = require("./config/database");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
