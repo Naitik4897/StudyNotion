@@ -61,16 +61,16 @@ const Catalog = () => {
           {/* Hero Section */}
           <div className=" box-content bg-richblack-800 px-4">
             <div className="mx-auto flex min-h-[260px] max-w-maxContentTab flex-col justify-center gap-4 lg:max-w-maxContent ">
-              <p className="text-sm text-richblack-300">
+              <p className="text-xs sm:text-sm text-richblack-300">
                 {`Home / Catalog / `}
                 <span className="text-yellow-25">
                   {catalogPageData?.data?.selectedCategory?.name}
                 </span>
               </p>
-              <p className="text-3xl text-richblack-5">
+              <p className="text-2xl sm:text-3xl text-richblack-5">
                 {catalogPageData?.data?.selectedCategory?.name}
               </p>
-              <p className="max-w-[870px] text-richblack-200">
+              <p className="max-w-[870px] text-sm sm:text-base text-richblack-200">
                 {catalogPageData?.data?.selectedCategory?.description}
               </p>
             </div>
@@ -78,7 +78,7 @@ const Catalog = () => {
     
           {/* Section 1 */}
           <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-            <div className="section_heading">Courses to get you started</div>
+            <div className="section_heading text-2xl sm:text-3xl">Courses to get you started</div>
             <div className="my-4 flex border-b border-b-richblack-600 text-sm">
               <p
                 className={`px-4 py-2 ${
@@ -102,7 +102,7 @@ const Catalog = () => {
               </p>
             </div>
             <div>
-              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
                 {catalogPageData?.data?.selectedCategory?.courses
                   ?.slice(0, 4)
                   .map((course, i) => (
@@ -113,11 +113,11 @@ const Catalog = () => {
           </div>
           {/* Section 2 */}
           <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-            <div className="section_heading">
+            <div className="section_heading text-2xl sm:text-3xl">
               Top courses in {catalogPageData?.data?.differentCategory?.name}
             </div>
             <div className="py-8">
-              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
                 {catalogPageData?.data?.differentCategory?.courses
                   ?.slice(0, 4)
                   .map((course, i) => (
@@ -129,9 +129,9 @@ const Catalog = () => {
     
           {/* Section 3 */}
           <div className=" mx-auto box-content w-full max-w-maxContentTab px-4 py-12 lg:max-w-maxContent">
-            <div className="section_heading">Frequently Bought</div>
+            <div className="section_heading text-2xl sm:text-3xl">Frequently Bought</div>
             <div className="py-8">
-              <div className="grid grid-cols-1 gap-6 lg:grid-cols-2">
+              <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-2">
                 {catalogPageData?.data?.mostSellingCourses
                   ?.slice(0, 4)
                   .map((course, i) => (

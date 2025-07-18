@@ -49,7 +49,7 @@ const ContactUsForm = () => {
       onSubmit={handleSubmit(submitContactForm)}
     >
       <div className="flex flex-col gap-5 lg:flex-row">
-        <div className="flex flex-col gap-2 lg:w-[48%]">
+        <div className="flex flex-col gap-2 w-full lg:w-[48%]">
           <label htmlFor="firstname" className="lable-style">
             First Name
           </label>
@@ -67,7 +67,7 @@ const ContactUsForm = () => {
             </span>
           )}
         </div>
-        <div className="flex flex-col gap-2 lg:w-[48%]">
+        <div className="flex flex-col gap-2 w-full lg:w-[48%]">
           <label htmlFor="lastname" className="lable-style">
             Last Name
           </label>
