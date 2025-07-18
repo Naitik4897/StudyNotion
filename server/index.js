@@ -23,10 +23,14 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(
   cors({
-    origin:"http://localhost:3000",
-    credentials:true,
+    origin: [
+      "http://localhost:3000",
+      "https://studynotion-1-if95.onrender.com", // your frontend Render URL
+      "https://studynotion-8pks.onrender.com"    // (optional) your backend Render URL, if needed
+    ],
+    credentials: true,
   })
-)
+);
 
 app.use(
   fileUpload({
