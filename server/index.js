@@ -34,6 +34,18 @@ app.use(
     tempFileDir:"/tmp",
   })
 )
+
+app.use(
+  cors({
+    origin: [
+      "http://localhost:3000",
+      "https://studynotion-1-if95.onrender.com"
+    ],
+    credentials: true,
+  })
+);
+
+
 //cloudinary connection
 cloudinaryConnect();
 
