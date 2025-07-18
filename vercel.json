@@ -4,27 +4,15 @@
     {
       "src": "server/index.js",
       "use": "@vercel/node"
-    },
-    {
-      "src": "package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "build"
-      }
     }
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
-      "dest": "server/index.js"
-    },
-    {
       "src": "/(.*)",
-      "dest": "/$1"
+      "dest": "server/index.js"
     }
   ],
   "env": {
-    "CI": "false",
-    "DISABLE_ESLINT_PLUGIN": "true"
+    "NODE_ENV": "production"
   }
 }
